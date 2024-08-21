@@ -2,11 +2,13 @@ import { useContext } from "react"
 import styled, { ThemeContext } from "styled-components"
 import { DayTaiwanGraphic } from "./svg/DayTaiwanGraphic"
 import { NightTaiwanGraphic } from "./svg/NightTaiwanGraphic"
+import { Audio } from "./Audio/Audio"
 
 
 const StyledContent = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center
 `
 
 export const Content = () => {
@@ -14,7 +16,9 @@ export const Content = () => {
 
   return (
     <StyledContent>
-      <div>audio1</div>
+      <div>
+        <Audio src="public/audios/garbage-truck.mp3"/>
+      </div>
       {themeContext?.name === 'light' ?
         <DayTaiwanGraphic />
         :
