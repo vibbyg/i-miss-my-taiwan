@@ -17,7 +17,7 @@ export const Content = () => {
   return (
     <StyledContent>
       <div>
-        <Audio src="public/audios/garbage-truck.mp3"/>
+        <Audio src="audio/garbage-truck.mp3" title='Garbage Truck'/>
       </div>
       {themeContext?.name === 'light' ?
         <DayTaiwanGraphic />

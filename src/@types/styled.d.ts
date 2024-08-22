@@ -7,7 +7,8 @@ declare module "styled-components" {
   export interface DefaultTheme extends CustomTheme {
     name: string,
     colors: {
-      background: string,
+      gradientBackground: string,
+      solidBackground: string,
       primary: string,
       red: string
     },

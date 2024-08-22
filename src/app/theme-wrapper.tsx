@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const GlobalStyles = createGlobalStyle`
   body {
-    background: ${(props) => props.theme.colors.background};
+    background: ${(props) => props.theme.colors.gradientBackground};
     color: ${(props) => props.theme.colors.primary};
     transition: background 0.5s ease-in, color 0.5s ease-in;
     position: relative;
@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 const ToggleStyle = styled.div`
+  cursor: pointer;
   position: absolute;
   top: 5%;
   right: 5%;
