@@ -1,10 +1,11 @@
 "use client";
 import styled from "styled-components";
-import { AudioSlider } from "./AudioSlider";
+import { AudioPlayer } from "./AudioPlayer";
 
 interface AudioInterface {
 	src: string;
 	title: string;
+  id?: number;
 }
 
 const AudioContainer = styled.div`
@@ -12,13 +13,13 @@ const AudioContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	gap: 0.75rem;
+	gap: 0.5rem;
 	max-width: 100%;
 	height: auto;
 	width: fit-content;
 	position: relative;
 	background: none;
-  margin: 0.5rem;
+  margin-bottom: 2rem;
 `;
 
 const Title = styled.div`
@@ -35,7 +36,7 @@ export const Audio = ({ src, title }: AudioInterface) => {
 	return (
 		<AudioContainer>
 				<Title>{title}</Title>
-				<AudioSlider src={src} />
+				<AudioPlayer src={src} />
 		</AudioContainer>
 	);
 };

@@ -3,12 +3,20 @@ import styled, { ThemeContext } from "styled-components"
 import { DayTaiwanGraphic } from "./svg/DayTaiwanGraphic"
 import { NightTaiwanGraphic } from "./svg/NightTaiwanGraphic"
 import { Audio } from "./Audio/Audio"
+import { taiwanAudioTracks } from "../data/tracks"
 
 
 const StyledContent = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center
+  justify-content: center;
+  align-items: center;
+`
+const TracksContainer = styled.div`
+  justify-self: center;
+`
+
+const TaiwanContainer = styled.div`
 `
 
 export const Content = () => {
@@ -16,15 +24,27 @@ export const Content = () => {
 
   return (
     <StyledContent>
-      <div>
-        <Audio src="audio/garbage-truck.mp3" title='Garbage Truck'/>
-      </div>
+      <TracksContainer>
+        {taiwanAudioTracks.map((track, index) => {
+          return (
+            <Audio id={index} src={track.src} title={track.title} />
+          )
+        })}
+      </TracksContainer>
+      <TaiwanContainer>
       {themeContext?.name === 'light' ?
         <DayTaiwanGraphic />
         :
         <NightTaiwanGraphic />
       }
-      <div>audio3</div>
+      </TaiwanContainer>
+      <TracksContainer>
+        {taiwanAudioTracks.map((track, index) => {
+          return (
+            <Audio id={index} src={track.src} title={track.title} />
+          )
+        })}
+      </TracksContainer>
     </StyledContent>
   )
 }

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const GlobalStyles = createGlobalStyle`
   body {
-    background: ${(props) => props.theme.colors.gradientBackground};
+    background: ${(props) => props.theme.colors.solidBackground};
     color: ${(props) => props.theme.colors.primary};
     transition: background 0.5s ease-in, color 0.5s ease-in;
     position: relative;

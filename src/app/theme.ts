@@ -1,9 +1,9 @@
-import { createGlobalStyle, DefaultTheme } from "styled-components";
+import { DefaultTheme } from "styled-components";
 
 export const lightTheme: DefaultTheme = {
   name: 'light',
   colors: {
-    gradientBackground: '#FFF8D1',
+    gradientBackground: 'radial-gradient(#FFF8D1, #FFE28A)',
     solidBackground: '#FFF8D1',
     primary: '#000000',
     red: '#8C3939',

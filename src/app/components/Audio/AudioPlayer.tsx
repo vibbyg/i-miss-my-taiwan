@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { PauseButton } from "../svg/PauseButton";
 import { PlayButton } from "../svg/PlayButton";
-import { useRef, useState } from "react";
+import { Ref, useEffect, useRef, useState } from "react";
 
 
-const StyledSlider = styled.input`
+const AudioSlider = styled.input`
 	display: block;
 	margin: 0;
 	cursor: pointer;
@@ -52,14 +52,36 @@ const StyledPauseButton = styled(PauseButton)`
 	}
 `;
 
-interface AudioSliderInterface {
+interface AudioPlayerInterface {
   src: string;
+	loop?: boolean;
 }
 
-export const AudioSlider = ({src}: AudioSliderInterface) => {
+const loopBeforeEnd = (audio: HTMLAudioElement) => {
+	const buffer = 0.44;
+	if (audio.currentTime > audio.duration - buffer) {
+		audio.currentTime = 0
+		audio.play()
+	}
+}
+
+export const AudioPlayer = ({src, loop}: AudioPlayerInterface) => {
   const [playAudio, setPlayAudio] = useState<boolean>(false);
 	const [volume, setVolume] = useState<number>(50);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+	useEffect(() => {
+		audioRef.current?.addEventListener("timeupdate", () => {
+			const buffer = 0.44
+			if(audioRef.current && audioRef.current.currentTime > audioRef.current.duration - buffer) {
+				audioRef.current.currentTime = 0
+				audioRef.current.play()
+			}
+		})
+	}, [])
+	if (audioRef.current) {
+		audioRef.current.loop = loop || true;
+	}
 
   const handlePlayClick = () => {
     if (!playAudio) {
@@ -86,7 +108,7 @@ export const AudioSlider = ({src}: AudioSliderInterface) => {
 					) : (
 						<StyledPlayButton onClick={handlePlayClick} />
 					)}
-					<StyledSlider
+					<AudioSlider
 						type="range"
 						min="1"
 						max="100"
