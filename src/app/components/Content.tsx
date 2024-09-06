@@ -4,44 +4,55 @@ import { DayTaiwanGraphic } from "./svg/DayTaiwanGraphic"
 import { NightTaiwanGraphic } from "./svg/NightTaiwanGraphic"
 import { Audio } from "./Audio/Audio"
 import { taiwanAudioTracks } from "../data/tracks"
+import { Header } from "./Header"
 
 
 const StyledContent = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+
+  @media (orientation: portrait) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+
 `
 const TracksContainer = styled.div`
-  justify-self: center;
+  justify-self: flex-start;
+  margin-right: 1rem;
+`
+const SvgContainer = styled.div`
+  width: 75%;
+  min-width: 400px;
 `
 
-const TaiwanContainer = styled.div`
-`
 
 export const Content = () => {
   const themeContext = useContext(ThemeContext)
 
   return (
     <StyledContent>
-      <TracksContainer>
-        {taiwanAudioTracks.map((track, index) => {
+      {/* <TracksContainer>
+        {taiwanAudioTracks.slice(0, 3).map((track, index) => {
           return (
-            <Audio id={index} src={track.src} title={track.title} />
+            <Audio key={index} src={track.src} title={track.title} />
           )
         })}
-      </TracksContainer>
-      <TaiwanContainer>
+      </TracksContainer> */}
+      <SvgContainer>
       {themeContext?.name === 'light' ?
         <DayTaiwanGraphic />
         :
         <NightTaiwanGraphic />
       }
-      </TaiwanContainer>
+      </SvgContainer>
       <TracksContainer>
         {taiwanAudioTracks.map((track, index) => {
           return (
-            <Audio id={index} src={track.src} title={track.title} />
+            <Audio key={index} src={track.src} title={track.title} />
           )
         })}
       </TracksContainer>

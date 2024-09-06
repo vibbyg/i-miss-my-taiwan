@@ -21,8 +21,24 @@ export const taiwanAudioTracks: AudioTrackInterface[] = [
     src: '/audio/markets-of-taiwan.mp3',
     title: 'Street Markets'
   },
+  // {
+  //   src: '/audio/orange-line.mp3',
+  //   title: 'MRT Orange Line'
+  // },
   {
-    src: '/audio/orange-line.mp3',
-    title: 'MRT Orange Line'
+    src: '/audio/mrt-entrance.mp3',
+    title: 'Entrance to MRT'
+  },
+  {
+    src: '/audio/longshan-temple.mp3',
+    title: 'Longshan Temple'
+  },
+  {
+    src: '/audio/mrt-fuxing.mp3',
+    title: 'MRT Fuxing Station'
+  },
+  {
+    src: '/audio/scooters.mp3',
+    title: 'Scooters !'
   }
 ]

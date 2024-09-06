@@ -10,8 +10,9 @@ const AudioSlider = styled.input`
 	cursor: pointer;
 	appearance: none;
 	background: none;
-	height: 1.5rem;
+	height: 1rem;
 	justify-self: center;
+	width: 15rem;
 
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
@@ -29,6 +30,19 @@ const AudioSlider = styled.input`
 		height: 0.2rem;
 		background: ${(props) => props.theme.colors.primary};
 	}
+
+	// @media (max-width: 1024px) and (orientation: portrait) {
+	// 	&::-webkit-slider-thumb {
+	// 		width: 0.7rem;
+	// 		height: 0.7rem;
+	// 	margin-top: -0.3rem;
+
+	// 	}
+
+	// 	&::-webkit-slider-runnable-track {
+	// 		height: 0.15rem;
+	// 	}
+	// }
 `;
 
 const AudioComponent = styled.div`
@@ -67,7 +81,7 @@ const loopBeforeEnd = (audio: HTMLAudioElement) => {
 
 export const AudioPlayer = ({src, loop}: AudioPlayerInterface) => {
   const [playAudio, setPlayAudio] = useState<boolean>(false);
-	const [volume, setVolume] = useState<number>(50);
+	const [volume, setVolume] = useState<number>(70);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
 	useEffect(() => {

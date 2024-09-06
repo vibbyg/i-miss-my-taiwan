@@ -19,7 +19,8 @@ const AudioContainer = styled.div`
 	width: fit-content;
 	position: relative;
 	background: none;
-  margin-bottom: 2rem;
+  margin-bottom: 1.1rem;
+	z-index: 100;
 `;
 
 const Title = styled.div`

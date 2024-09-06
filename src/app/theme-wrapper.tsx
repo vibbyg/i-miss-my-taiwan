@@ -1,9 +1,8 @@
 'use client'
 
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./theme";
-import { Toggle } from "./components/Toggle";
-import { useState } from "react";
+import { createGlobalStyle, DefaultTheme, ThemeProvider } from "styled-components";
+import { lightTheme } from "./theme";
+import { createContext, useCallback, useContext, useState } from "react";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -16,30 +15,30 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 `
-const ToggleStyle = styled.div`
-  cursor: pointer;
-  position: absolute;
-  top: 5%;
-  right: 5%;
-`
+
+const ThemeContext = createContext((changes: Partial<DefaultTheme>) => console.error('attempted to set theme outside ThemeUpdateContext.Provider'))
 
 export const ThemeWrapper = ({
   children 
 }: { 
   children: React.ReactNode; 
 }) => {
-  const [mode, setMode] = useState('light');
 
-  const handleModeClick = () => {
-    mode === 'light' ? setMode('dark') : setMode('light')
-  }
+  const [mode, setMode] = useState(lightTheme);
+  const updateTheme = useCallback(
+    (changes: Partial<DefaultTheme>) => {
+      setMode({...mode, ...changes})
+    },
+    [mode, setMode]
+  )
   return (
-    <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={mode}>
       <GlobalStyles />
-      <ToggleStyle>
-        <Toggle mode={mode} onModeClick={handleModeClick} />
-      </ToggleStyle>
-      {children}
+      <ThemeContext.Provider value={updateTheme}>
+        {children}
+      </ThemeContext.Provider>
       </ThemeProvider>
   )
 }
+
+export const useUpdateTheme = () => useContext(ThemeContext);
