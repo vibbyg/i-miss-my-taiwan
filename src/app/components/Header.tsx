@@ -9,7 +9,7 @@ const Title = styled.div`
   line-height: 1.4;
   white-space: nowrap;
 
-  @media (max-width: 375px) {
+  @media (max-width: 580px) {
     font-size: ${props => props.theme.fontSize.h2}
   }
 
