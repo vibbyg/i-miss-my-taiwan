@@ -10,8 +10,6 @@ const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.colors.primary};
     transition: background 0.5s ease-in, color 0.5s ease-in;
     position: relative;
-    height: 100%;
-    width: 100%;
     margin: 0;
   }
 `

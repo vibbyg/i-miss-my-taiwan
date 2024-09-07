@@ -31,18 +31,17 @@ const AudioSlider = styled.input`
 		background: ${(props) => props.theme.colors.primary};
 	}
 
-	// @media (max-width: 1024px) and (orientation: portrait) {
-	// 	&::-webkit-slider-thumb {
-	// 		width: 0.7rem;
-	// 		height: 0.7rem;
-	// 	margin-top: -0.3rem;
+	@media (max-width: 480px) and (orientation: portrait) {
+		&::-webkit-slider-thumb {
+			width: 0.85rem;
+			height: 0.85rem;
+			margin-top: -0.3rem;
+		}
 
-	// 	}
-
-	// 	&::-webkit-slider-runnable-track {
-	// 		height: 0.15rem;
-	// 	}
-	// }
+		&::-webkit-slider-runnable-track {
+			height: 0.15rem;
+		}
+	}
 `;
 
 const AudioComponent = styled.div`

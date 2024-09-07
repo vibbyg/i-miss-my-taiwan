@@ -13,6 +13,7 @@ declare module "styled-components" {
       red: string
     },
     fontSize: {
+      mp: string,
       p: string,
       h3: string,
       h2: string,

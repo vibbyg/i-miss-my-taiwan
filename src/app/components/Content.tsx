@@ -23,6 +23,10 @@ const StyledContent = styled.div`
 const TracksContainer = styled.div`
   justify-self: flex-start;
   margin-right: 1rem;
+
+  @media (orientation: portrait) {
+    margin-right: 0rem;
+  }
 `
 const SvgContainer = styled.div`
   width: 75%;

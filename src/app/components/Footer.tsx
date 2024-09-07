@@ -11,16 +11,27 @@ const StyledFooter = styled.div`
 
   @media (orientation: portrait) {
     position: relative;
+    justify-content: flex-end;
   }
 `
 
 const StyledList = styled.ul`
   list-style: none;
   font-size: ${props => props.theme.fontSize.p};
+
+  @media (max-width: 375px) {
+    font-size: ${props => props.theme.fontSize.mp}
+  }
 `
 const StyledItem = styled.li`
   float: left;
   margin: 0.5rem;
+  cursor: pointer;
+  color: ${props => props.theme.colors.red};
+  
+  &:hover {
+    font-weight: bold;
+  }
 `
 
 type FooterList = {
@@ -30,14 +41,11 @@ type FooterList = {
 
 const footerListData = [
   {
-    title: 'inspiration'
+    title: '?'
   },
   {
-    title: 'more works'
+    title: 'other works'
   },
-  {
-    title: 'see more...'
-  }
 ] 
 
 export const Footer = () => {

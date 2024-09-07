@@ -16,12 +16,15 @@ const Title = styled.div`
 `
 const Subtitle = styled.div`
   font-size: ${props => props.theme.fontSize.p};
-
+  @media (max-width: 375px) {
+    font-size: ${props => props.theme.fontSize.mp}
+  }
 `
 const StyledHeader = styled.div`
   margin: 2em 2em 0.5em 2em;
 
   @media (orientation: portrait) {
+    margin-top: 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;

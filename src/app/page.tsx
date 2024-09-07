@@ -9,10 +9,6 @@ import { useContext } from "react";
 import { darkTheme, lightTheme } from "./theme";
 
 
-interface HomeInterface {
-  mode: string,
-}
-
 const Main = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,10 +20,31 @@ const ToggleStyle = styled.div`
   top: 5%;
   right: 5%;
 
+
   @media (orientation: portrait) {
     position: relative;
     top: 0%;
     right: 0%;
+    width: 80px;
+    align-self: center;
+  }
+`
+
+const NavBar = styled.div`
+  @media (orientation: portrait) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  @media (orientation: portrait) and (max-width: 480px) {
+    gap: 0.5rem;
+    margin: 0.5rem 0.5rem 0rem 0.5rem;
+  }
+
+  @media (orientation: portrait) and (max-width: 800px) {
+    gap: 1rem;
+    margin: 0.5rem 0.9rem 0rem 0.9rem;
   }
 `
 
@@ -47,12 +64,14 @@ export default function Home() {
 
   return (
     <Main>
+      <NavBar>
+      <Footer />
       <ToggleStyle>
         <Toggle mode={currentTheme?.name} onModeClick={handleThemeChange} />
       </ToggleStyle>
+      </NavBar>
       <Header />
       <Content />
-      <Footer />
     </Main>
   );
 }

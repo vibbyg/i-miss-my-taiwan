@@ -9,6 +9,7 @@ export const lightTheme: DefaultTheme = {
     red: '#8C3939',
   },
   fontSize: {
+    mp: '1rem',
     p: '1.2rem',
     h3: '2rem',
     h2: '3rem',
@@ -22,9 +23,10 @@ export const darkTheme: DefaultTheme = {
     gradientBackground: 'radial-gradient(#2E4482, #100D36)',
     solidBackground: '#100D36',
     primary: '#FFF8D1',
-    red: '#8C3939'
+    red: '#E48A8A'
   },
   fontSize: {
+    mp: '1rem',
     p: '1.2rem',
     h3: '2rem',
     h2: '3rem',

@@ -28,6 +28,14 @@ const Title = styled.div`
 	font-size: ${(props) => props.theme.fontSize.p};
 	// font-weight: bold;
 	text-wrap: nowrap;
+
+	@media (orientation: landscape) and (max-width: 820px) {
+		font-size: ${(props) => props.theme.fontSize.mp};
+	}
+	
+	@media (orientation: portrait) and (max-width: 480px) {
+		font-size: ${(props) => props.theme.fontSize.mp};
+	}
 `;
 
 
