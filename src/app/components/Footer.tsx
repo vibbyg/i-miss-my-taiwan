@@ -44,7 +44,7 @@ const footerListData = [
     title: '?'
   },
   {
-    title: 'other works'
+    title: 'more works!'
   },
 ] 
 
