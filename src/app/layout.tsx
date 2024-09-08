@@ -10,8 +10,8 @@ const inria = Inria_Serif({ weight: ['300', '400', '700'], style: ['italic', 'no
 
 export const metadata: Metadata = {
   title: "I Miss My Taiwan",
-  description: "Sounds of Taiwan and Asia",
-  icons: "/favicon.ico",
+  description: "Sounds of Taiwan",
+  // icons: "/favicon.ico",
 };
 
 export default function RootLayout({
