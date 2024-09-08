@@ -11,6 +11,7 @@ const inria = Inria_Serif({ weight: ['300', '400', '700'], style: ['italic', 'no
 export const metadata: Metadata = {
   title: "I Miss My Taiwan",
   description: "Sounds of Taiwan and Asia",
+  icons: "/favicon.ico",
 };
 
 export default function RootLayout({
@@ -20,9 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body className={inria.className}>
         <StyledComponentsRegistry>
+          <div id="portal" />
           <ThemeWrapper>
           {children}
           </ThemeWrapper>
