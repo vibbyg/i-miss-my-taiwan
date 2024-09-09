@@ -1,5 +1,8 @@
 import styled from "styled-components"
-
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import Link from "next/link";
+import { InfoDialog } from "./Dialog/InfoDialog";
 
 const StyledFooter = styled.div`
   display: flex;
@@ -49,15 +52,23 @@ const footerListData = [
 ] 
 
 export const Footer = () => {
+  const [infoDialog, setInfoDialog] = useState(false);
 
+  const handleInfoDialogClick = () => {
+    setInfoDialog(!infoDialog)
+  }
+  
   return (
     <StyledFooter>
+      {infoDialog ? 
+      <InfoDialog onDialogClick={handleInfoDialogClick}>
+        Test
+      </InfoDialog> 
+      : null }
       <StyledList>
-        {
-          footerListData.map((item, index) => {
-            return <StyledItem key={index}>{item.title}</StyledItem>
-          })
-        }
+        <StyledItem onClick={handleInfoDialogClick}>?</StyledItem>
+        <Link href={"https://vibby.vercel.app"} target="_blank"><StyledItem>more works!</StyledItem></Link>
+
       </StyledList>
     </StyledFooter>
   )
