@@ -34,7 +34,7 @@ export const InfoDialog = ({ onDialogClick }: DialogInterface)=> {
         coming back from exchange, i reminisced over the vibrant culture of taiwan and wanted a way to feel connected to its culture and people.</p>
         <p>with inspiration from <a href="https://imissmycafe.com" target="_blank" style={linkStyle}><b>imissmycafe ☕</b></a>, and my girlfriend k&#39;s idea of creating something similar but for taiwan, 
         this personal artifact was brought to life.
-        although a few sounds are from my own footage, i also want to give credit to <a href="https://taiwanquest.com" target="_blank" style={linkStyle}><b>taiwan quest 🇹🇼</b></a> and <a href="https://fh-potsdam.github.io/Sounds-of-Taipei/" target="_blank" style={linkStyle}><b>postdam's sounds of taipei</b></a> for their catalog of sounds to use.</p>
+        although a few sounds are from my own footage, i also want to give credit to <a href="https://taiwanquest.com" target="_blank" style={linkStyle}><b>taiwan quest 🇹🇼</b></a> and <a href="https://fh-potsdam.github.io/Sounds-of-Taipei/" target="_blank" style={linkStyle}><b>postdam&#39;s sounds of taipei</b></a> for their catalog of sounds to use.</p>
         <p>come and immerse yourselves in some of the most prominent sounds taiwan has to offer :) </p>
         <a href="https://instagram.com/vibbyridge" target="_blank" style={linkStyle}><b>- vibhor ( ͡❛ ͜ʖ ͡❛)✌</b></a>
         </Content>
